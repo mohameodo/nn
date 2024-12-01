@@ -3,7 +3,7 @@ import { User, UserProfile } from 'src/types/user.type'
 import { SuccessResponse } from 'src/types/utils.type'
 import http from 'src/utils/http'
 
-const URL_SUBSCRIBER = '/api/v1/subscribers'
+const URL_SUBSCRIBER = '/rest/v1/subscribers'
 export const subscriberApi = {
   getSubscribers: () => {
     return http.get<SuccessResponse<Subscriber[]>>(URL_SUBSCRIBER)

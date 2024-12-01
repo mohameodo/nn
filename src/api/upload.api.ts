@@ -4,7 +4,7 @@ import config from 'src/constants/config'
 import { UploadVideo } from 'src/types/video.type'
 import http from 'src/utils/http'
 
-const URL_CREATE_VIDEO = '/api/v1/videos'
+const URL_CREATE_VIDEO = '/rest/v1/videos'
 export let controllerVideo: AbortController
 export let controllerImage: AbortController
 

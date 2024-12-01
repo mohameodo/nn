@@ -1,8 +1,8 @@
 import { Comment } from 'src/types/comment.type'
 import { SuccessResponse } from 'src/types/utils.type'
 import http from 'src/utils/http'
-const URL_COMMENT = 'api/v1/videos'
-const URL_CREATE_COMMENT = 'api/v1/comments'
+const URL_COMMENT = '/rest/v1/videos'
+const URL_CREATE_COMMENT = '/rest/v1/comments'
 
 export const commentApi = {
   getComment: (idVideo: string) => {

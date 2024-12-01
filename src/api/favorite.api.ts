@@ -2,8 +2,8 @@ import { favorite, FavoriteItem } from 'src/types/favorite.type'
 import { SuccessResponse } from 'src/types/utils.type'
 import http from 'src/utils/http'
 
-const URL_FAVORITE = '/api/v1/favoriteVideos'
-const URL_CHANNEL = '/api/v1/channels'
+const URL_FAVORITE = '/rest/v1/favoriteVideos'
+const URL_CHANNEL = '/rest/v1/channels'
 const favoriteApi = {
   getFavoriteVideos: () => {
     return http.get<FavoriteItem>(URL_FAVORITE)

@@ -6,9 +6,9 @@ import http from 'src/utils/http'
 import { FilterView } from 'src/types/view.type'
 import { following } from 'src/types/following.type'
 
-export const URL_GET_VIDEO = '/api/v1/videos'
-export const URL_GET_VIDEO_CHANNEL = `/api/v1/channels`
-export const URL_GET_VIDEO_HISTORY = `/api/v1/watchHistories`
+export const URL_GET_VIDEO = '/rest/v1/videos'
+export const URL_GET_VIDEO_CHANNEL = `/rest/v1/channels`
+export const URL_GET_VIDEO_HISTORY = `/rest/v1/watchHistories`
 
 const videoApi = {
   getVideoAll: () => {
@@ -18,19 +18,19 @@ const videoApi = {
     return http.get<SuccessResponse<Video[]>>(URL_GET_VIDEO, { params })
   },
   getVideoById: (idVideo: string) => {
-    return http.get<SuccessResponse<VideoItem>>(`${URL_GET_VIDEO}/${idVideo}`)
+    return http.get<SuccessResponse<VideoItem>>(`${URL_GET_VIDEO}?id=eq.${idVideo}`)
   },
   updateInforVideo: (data: UploadVideo, idVideo: string) => {
-    return http.patch<SuccessResponse<Video>>(`${URL_GET_VIDEO}/${idVideo}`, data)
+    return http.patch<SuccessResponse<Video>>(`${URL_GET_VIDEO}?id=eq.${idVideo}`, data)
   },
   deleteVideo: (idVideo: string) => {
-    return http.delete<SuccessResponse<Video>>(`${URL_GET_VIDEO}/${idVideo}`)
+    return http.delete<SuccessResponse<Video>>(`${URL_GET_VIDEO}?id=eq.${idVideo}`)
   },
   deleteAllVideo: (videos: string[]) => {
     return http.patch<SuccessResponse<Video[]>>(`${URL_GET_VIDEO}/delete-multiple-videos`, { videos })
   },
   getVideoChannel: (idChannel: string) => {
-    return http.get<SuccessResponse<Video[]>>(`${URL_GET_VIDEO_CHANNEL}/${idChannel}/videos`)
+    return http.get<SuccessResponse<Video[]>>(`${URL_GET_VIDEO_CHANNEL}?id=eq.${idChannel}`)
   },
   setAction: (data: { action: string; video: string }) => {
     return http.patch(`${URL_GET_VIDEO}/action`, data)
@@ -41,7 +41,7 @@ const videoApi = {
     })
   },
   setWatchVideoTime: (data: { idView: string; watchedTime: number }) => {
-    return http.patch(`${URL_GET_VIDEO}/view/${data.idView}`, {
+    return http.patch(`${URL_GET_VIDEO}/view?id=eq.${data.idView}`, {
       watchedTime: data.watchedTime
     })
   },
@@ -52,7 +52,7 @@ const videoApi = {
     return http.post(`${URL_GET_VIDEO}/view`, data)
   },
   getVideoWatchTime: (idChannel: string) => {
-    return http.get<SuccessResponse<FilterView>>(`${URL_GET_VIDEO_CHANNEL}/${idChannel}/watchHistories
+    return http.get<SuccessResponse<FilterView>>(`${URL_GET_VIDEO_CHANNEL}?id=eq.${idChannel}/watchHistories
     `)
   },
   getAnalysisVideo: (params: { date: string; option: string }) => {

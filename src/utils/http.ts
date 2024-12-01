@@ -26,7 +26,7 @@ class Http {
     this.refreshToken = getRefreshTokenFromLocalStorage()
     this.refreshTokenRequest = null
     this.instance = axios.create({
-      baseURL: config.baseUrl,
+      baseURL: 'https://your-supabase-url.supabase.co',
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json'

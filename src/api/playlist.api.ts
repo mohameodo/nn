@@ -4,8 +4,8 @@ import { SuccessResponse } from 'src/types/utils.type'
 import { Video } from 'src/types/video.type'
 import http from 'src/utils/http'
 
-const URL_PLAYLIST = '/api/v1/playlists'
-const URL_CHANNEL = '/api/v1/channels'
+const URL_PLAYLIST = '/rest/v1/playlists'
+const URL_CHANNEL = '/rest/v1/channels'
 
 const playListAPI = {
   getPlayList: () => {
@@ -15,19 +15,19 @@ const playListAPI = {
     return http.post(`${URL_PLAYLIST}`, data)
   },
   getPlayListById: (channelId: string) => {
-    return http.get<SuccessResponse<playList[]>>(`${URL_CHANNEL}/${channelId}/playlists`)
+    return http.get<SuccessResponse<playList[]>>(`${URL_CHANNEL}?id=eq.${channelId}&select=playlists`)
   },
   getVideoById: (channelId: string) => {
-    return http.get<SuccessResponse<Video[]>>(`${URL_CHANNEL}/${channelId}/videos`)
+    return http.get<SuccessResponse<Video[]>>(`${URL_CHANNEL}?id=eq.${channelId}&select=videos`)
   },
   getChannelById: (channelId: string) => {
-    return http.get<SuccessResponse<User>>(`${URL_CHANNEL}/get-channel/${channelId}`)
+    return http.get<SuccessResponse<User>>(`${URL_CHANNEL}?id=eq.${channelId}&select=*`)
   },
   VideoToPlayList: (data: { action: string; video: string; idPlayList: string }) => {
-    return http.patch(`${URL_PLAYLIST}/${data.idPlayList}`, { action: data.action, video: data.video })
+    return http.patch(`${URL_PLAYLIST}?id=eq.${data.idPlayList}`, { action: data.action, video: data.video })
   },
   getPlayListVideoById: (id: string) => {
-    return http.get<SuccessResponse<playList>>(`${URL_PLAYLIST}/${id}`)
+    return http.get<SuccessResponse<playList>>(`${URL_PLAYLIST}?id=eq.${id}`)
   }
 }
 

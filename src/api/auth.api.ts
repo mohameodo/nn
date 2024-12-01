@@ -1,14 +1,13 @@
 import { AuthResponse } from 'src/types/auth.type'
 import http from 'src/utils/http'
 
-export const URL_LOGIN = '/api/v1/channels/login'
-export const URL_REGISTER = '/api/v1/channels/signup'
-export const URL_VERIFY_EMAIL = '/api/v1/channels/verify'
-export const URL_LOGOUT = '/api/v1/channels/logout'
-export const GET_OTP = '/api/v1/channels/get-otp'
-export const URL_REFRESH_TOKEN = '/api/v1/channels/refresh-access-token'
+export const URL_LOGIN = '/auth/v1/token?grant_type=password'
+export const URL_REGISTER = '/auth/v1/signup'
+export const URL_VERIFY_EMAIL = '/auth/v1/verify'
+export const URL_LOGOUT = '/auth/v1/logout'
+export const GET_OTP = '/auth/v1/otp'
+export const URL_REFRESH_TOKEN = '/auth/v1/token?grant_type=refresh_token'
 
-//* Method 2
 const authApi = {
   registerAccount(body: { email: string; password: string; fullName: string; passwordConfirm: string }) {
     return http.post<AuthResponse>(URL_REGISTER, body)
@@ -26,13 +25,13 @@ const authApi = {
     return http.post(GET_OTP, body)
   },
   forgotPassword(body: { email: string }) {
-    return http.post('/api/v1/channels/forgotPassword', body)
+    return http.post('/auth/v1/forgotPassword', body)
   },
   verifyResetPassPage(body: { encode: string }) {
-    return http.post('/api/v1/channels/verifyResetPass', body)
+    return http.post('/auth/v1/verifyResetPass', body)
   },
   resetPassword(body: { password: string; passwordConfirm: string }, token: string) {
-    return http.patch(`/api/v1/channels/resetPassword/${token}`, body)
+    return http.patch(`/auth/v1/resetPassword/${token}`, body)
   }
 }
 
