@@ -23,8 +23,8 @@ const LikedPlaylistPage = () => {
   return (
     <>
       <Helmet>
-        <title>Trang danh sách video yêu thích - HciTube</title>
-        <meta name='description' content='Trang danh sách video yêu thích - HciTube' />
+        <title>Favorite Video List Page - HciTube</title>
+        <meta name='description' content='Favorite Video List Page - HciTube' />
       </Helmet>
       <div className='container flex min-h-screen gap-x-20 bg-[#ffffff] dark:bg-[#0f0f0f]'>
         <AsideBar />
@@ -59,7 +59,7 @@ const LikedPlaylistPage = () => {
                 VideoList.data.data?.map((item, index) => <VideoItem key={index} data={item.video} index={index} />)}
               {isSuccess && (VideoList.data.data.length as number) === 0 && (
                 <div className='flex h-[67vh] w-full flex-col items-center justify-center'>
-                  <span className='text-xl font-bold text-black dark:text-white'>Không có video nào trong</span>
+                  <span className='text-xl font-bold text-black dark:text-white'>No videos in the list</span>
                 </div>
               )}
             </div>

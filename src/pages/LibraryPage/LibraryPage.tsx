@@ -68,8 +68,8 @@ const LibraryPage = () => {
   return (
     <>
       <Helmet>
-        <title>Trang thư viện - HciTube</title>
-        <meta name='description' content='Trang thư viện  - HciTube' />
+        <title>Library Page - HciTube</title>
+        <meta name='description' content='Library Page - HciTube' />
       </Helmet>
       <div className='container flex gap-x-20 bg-[#ffffff] dark:bg-[#0f0f0f]'>
         <AsideBar />
@@ -107,7 +107,7 @@ const LibraryPage = () => {
                   <div className='flex items-center justify-between pb-3'>
                     <div className='flex items-center text-black dark:text-white'>
                       <RiHistoryLine className='mr-3 h-6 w-6' />
-                      <span className='text-xl font-extrabold '>Video đã xem</span>
+                      <span className='text-xl font-extrabold '>Watched Videos</span>
                     </div>
 
                     {(getVideoHistory?.data.data.today.length as number) > 0 && (
@@ -115,7 +115,7 @@ const LibraryPage = () => {
                         className='rounded-full px-4 py-2 text-sm font-semibold text-blue-500 hover:cursor-pointer hover:bg-blue-100'
                         onClick={() => navigate('/history')}
                       >
-                        Xem tất cả
+                        View All
                       </button>
                     )}
                   </div>
@@ -123,7 +123,7 @@ const LibraryPage = () => {
                     <div className='flex h-full w-full gap-3  overflow-x-auto'>
                       <div className='flex h-full w-full items-center justify-center '>
                         <span className='pb-10 text-lg font-bold text-black dark:text-white'>
-                          Hôm nay bạn chưa xem video nào
+                          You haven't watched any videos today
                         </span>
                       </div>
                     </div>
@@ -179,14 +179,14 @@ const LibraryPage = () => {
                   <div className='flex items-center justify-between pb-3'>
                     <div className='flex items-center text-black dark:text-white'>
                       <AiOutlineLike className='mr-3 h-6 w-6' />
-                      <span className='text-xl font-extrabold'>Video đã thích</span>
+                      <span className='text-xl font-extrabold'>Liked Videos</span>
                     </div>
                     {(VideoListFavorite?.data.data.length as number) > 0 && (
                       <button
                         className='rounded-full px-4 py-2 text-sm font-semibold text-blue-500 hover:cursor-pointer hover:bg-blue-100'
                         onClick={() => navigate('/liked-playlist')}
                       >
-                        Xem tất cả
+                        View All
                       </button>
                     )}
                   </div>
@@ -206,7 +206,7 @@ const LibraryPage = () => {
                     ) : (
                       <div className='flex h-full w-full items-center justify-center '>
                         <span className='pb-10 text-lg font-bold text-black dark:text-white'>
-                          Bạn chưa thích video nào
+                          You haven't liked any videos
                         </span>
                       </div>
                     )}
@@ -219,7 +219,7 @@ const LibraryPage = () => {
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
                     <RiHistoryLine className='mr-3 h-6 w-6' />
-                    <span className='text-xl font-extrabold'>Danh sách phát</span>
+                    <span className='text-xl font-extrabold'>Playlists</span>
                   </div>
                 </div>
                 {isLoading && (
@@ -264,7 +264,7 @@ const LibraryPage = () => {
                   </div>
                 ) : (
                   <div className='flex h-20 w-full items-center justify-center   '>
-                    <span className='text-lg font-bold text-black dark:text-white'>Bạn chưa có danh sách phát nào</span>
+                    <span className='text-lg font-bold text-black dark:text-white'>You don't have any playlists</span>
                   </div>
                 )}
               </div>

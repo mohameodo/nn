@@ -22,8 +22,8 @@ const HistoryPage = () => {
   return (
     <>
       <Helmet>
-        <title>Trang video đã xem - HciTube</title>
-        <meta name='description' content='Trang video đã xem - HciTube' />
+        <title>Watched Videos Page - HciTube</title>
+        <meta name='description' content='Watched Videos Page - HciTube' />
       </Helmet>
       <div className='ccontainer flex gap-x-20 bg-[#ffffff] dark:bg-[#0f0f0f]'>
         <AsideBar />
@@ -51,7 +51,7 @@ const HistoryPage = () => {
                 {isSuccess && getVideoHistory.data.data.today.length > 0 && (
                   <>
                     <h1 className='mb-3 text-lg font-extrabold text-black dark:text-white md:text-xl lg:mb-0 lg:pt-2 lg:pb-6'>
-                      Hôm nay
+                      Today
                     </h1>
                     <div className='flex h-full w-full flex-col'>
                       {isSuccess &&
@@ -86,7 +86,7 @@ const HistoryPage = () => {
                 {isSuccess && getVideoHistory.data.data.yesterday.length > 0 && (
                   <>
                     <h1 className='mb-3 text-lg font-extrabold text-black dark:text-white md:text-xl lg:mb-0 lg:pt-2 lg:pb-6'>
-                      Hôm qua
+                      Yesterday
                     </h1>
                     <div className='flex h-full w-full flex-col'>
                       {isSuccess &&
@@ -121,7 +121,7 @@ const HistoryPage = () => {
                 {isSuccess && getVideoHistory.data.data.thisWeek.length > 0 && (
                   <>
                     <h1 className='mb-3 text-lg font-extrabold text-black dark:text-white md:text-xl lg:mb-0 lg:pt-2 lg:pb-6'>
-                      Tuần này
+                      This Week
                     </h1>
                     <div className='flex h-full w-full flex-col'>
                       {isSuccess &&
@@ -156,7 +156,7 @@ const HistoryPage = () => {
                 {isSuccess && getVideoHistory.data.data.thisMonth.length > 0 && (
                   <>
                     <h1 className='mb-3 text-lg font-extrabold text-black dark:text-white md:text-xl lg:mb-0 lg:pt-2 lg:pb-6'>
-                      Tháng này
+                      This Month
                     </h1>
                     <div className='flex h-full w-full flex-col'>
                       {isSuccess &&
@@ -191,7 +191,7 @@ const HistoryPage = () => {
                 {isSuccess && getVideoHistory.data.data.older.length > 0 && (
                   <>
                     <h1 className='mb-3 text-lg font-extrabold text-black dark:text-white md:text-xl lg:mb-0 lg:pt-2 lg:pb-6'>
-                      Năm này
+                      This Year
                     </h1>
                     <div className='flex h-full w-full flex-col'>
                       {isSuccess &&

@@ -8,7 +8,7 @@ export const URL_LOGOUT = '/api/v1/channels/logout'
 export const GET_OTP = '/api/v1/channels/get-otp'
 export const URL_REFRESH_TOKEN = '/api/v1/channels/refresh-access-token'
 
-//* C2
+//* Method 2
 const authApi = {
   registerAccount(body: { email: string; password: string; fullName: string; passwordConfirm: string }) {
     return http.post<AuthResponse>(URL_REGISTER, body)

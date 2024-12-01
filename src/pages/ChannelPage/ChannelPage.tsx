@@ -104,7 +104,7 @@ const ChannelPage = () => {
   const handleSubscribe = () => {
     if (isVerify !== '2') {
       toast.dismiss()
-      toast.info('Bạn cần đăng nhập tài khoản để thực hiện chức năng này', {
+      toast.info('You need to log in to perform this function', {
         position: 'top-right',
         autoClose: 2000,
         pauseOnHover: false
@@ -121,7 +121,7 @@ const ChannelPage = () => {
   const handleUnSubscribe = () => {
     if (isVerify !== '2') {
       toast.dismiss()
-      toast.info('Bạn cần đăng nhập tài khoản để thực hiện chức năng này', {
+      toast.info('You need to log in to perform this function', {
         position: 'top-right',
         autoClose: 2000,
         pauseOnHover: false
@@ -194,7 +194,7 @@ const ChannelPage = () => {
                     </span>
                     <div className='flex items-center gap-x-4'>
                       <span className='text-xs font-semibold text-[#8e8883] md:text-sm'>
-                        {convertNumberToDisplayString(totalSubscribers)} người đăng ký
+                        {convertNumberToDisplayString(totalSubscribers)} subscribers
                       </span>
                       {/* <span className='text-xs font-semibold text-[#8e8883] md:text-sm'>
                       {convertNumberToDisplayString(254)} video
@@ -221,13 +221,13 @@ const ChannelPage = () => {
                         to={path.profile}
                         className='rounded-xl bg-[#f2f2f2] p-2 text-xs font-semibold text-black dark:bg-[#272727] dark:text-white md:text-sm'
                       >
-                        Tùy chỉnh kênh
+                        Customize channel
                       </Link>
                       <Link
                         to={path.content}
                         className='rounded-xl bg-[#f2f2f2] p-2 text-xs font-semibold text-black dark:bg-[#272727] dark:text-white md:text-sm'
                       >
-                        Quản lý video
+                        Manage videos
                       </Link>
                     </div>
                   )}
@@ -239,14 +239,14 @@ const ChannelPage = () => {
                         onClick={handleUnSubscribe}
                       >
                         <IoMdNotificationsOutline className='h-6 w-6 text-black dark:text-white' />
-                        Đã đăng ký
+                        Subscribed
                       </button>
                     ) : (
                       <button
                         className='flex h-fit items-center gap-x-2 rounded-2xl bg-[#0f0f0f] py-2 px-4 text-xs font-semibold  text-white dark:bg-[#f1f1f1] dark:text-black max-sm:px-3 max-sm:py-1 md:text-sm'
                         onClick={handleSubscribe}
                       >
-                        Đăng ký
+                        Subscribe
                       </button>
                     ))}
                 </div>
@@ -298,7 +298,7 @@ const ChannelPage = () => {
                     type='button'
                     onClick={() => setChoose('channel')}
                   >
-                    TRANG CHỦ
+                    HOME
                   </NavLink>
                 </SwiperSlide>
 
@@ -328,7 +328,7 @@ const ChannelPage = () => {
                     type='button'
                     onClick={() => setChoose('playlist')}
                   >
-                    DANH SÁCH PHÁT
+                    PLAYLIST
                   </NavLink>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -343,7 +343,7 @@ const ChannelPage = () => {
                     type='button'
                     onClick={() => setChoose('about')}
                   >
-                    GIỚI THIỆU
+                    ABOUT
                   </NavLink>
                 </SwiperSlide>
               </Swiper>

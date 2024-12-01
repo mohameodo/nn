@@ -18,8 +18,8 @@ const SubscriptionsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Kênh đăng ký - HciTube</title>
-        <meta name='description' content='Trang kênh đăng ký - HciTube' />
+        <title>Subscriptions - HciTube</title>
+        <meta name='description' content='Subscriptions Page - HciTube' />
       </Helmet>
       <div className='container flex gap-x-20 bg-[#ffffff] dark:bg-[#0f0f0f]'>
         <AsideBar />
@@ -58,7 +58,7 @@ const SubscriptionsPage = () => {
               <div className='mt-6 w-full border-b border-b-[rgba(0,0,0,0.1)] pb-6 dark:border-b-gray-600'>
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
-                    <span className='text-lg font-bold'>Hôm nay</span>
+                    <span className='text-lg font-bold'>Today</span>
                   </div>
                 </div>
 
@@ -69,7 +69,7 @@ const SubscriptionsPage = () => {
                   {isSuccess && (getVideoFollowing?.data.data.today.length as number) === 0 && (
                     <div className='flex  h-full w-full items-center justify-center   '>
                       <span className='text-2xl font-bold text-black dark:text-white'>
-                        Không tìm thấy video nào được đăng tải
+                        No videos found
                       </span>
                     </div>
                   )}
@@ -107,7 +107,7 @@ const SubscriptionsPage = () => {
               <div className='mt-6 w-full border-b border-b-[rgba(0,0,0,0.1)] pb-6 dark:border-b-gray-600'>
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
-                    <span className='text-lg font-bold'>Hôm qua</span>
+                    <span className='text-lg font-bold'>Yesterday</span>
                   </div>
                 </div>
 
@@ -118,7 +118,7 @@ const SubscriptionsPage = () => {
                   {isSuccess && getVideoFollowing.data.data.yesterday.length === 0 && (
                     <div className='flex  w-full items-center justify-center'>
                       <span className='text-2xl font-bold text-black dark:text-white'>
-                        Không tìm thấy video nào được đăng tải
+                        No videos found
                       </span>
                     </div>
                   )}
@@ -156,7 +156,7 @@ const SubscriptionsPage = () => {
               <div className='mt-6 w-full border-b border-b-[rgba(0,0,0,0.1)] pb-6 dark:border-b-gray-600'>
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
-                    <span className='text-lg font-bold'>Tuần này</span>
+                    <span className='text-lg font-bold'>This Week</span>
                   </div>
                 </div>
 
@@ -167,7 +167,7 @@ const SubscriptionsPage = () => {
                   {isSuccess && getVideoFollowing.data.data.thisWeek.length === 0 && (
                     <div className='flex  h-full w-full items-center justify-center   '>
                       <span className='text-2xl font-bold text-black dark:text-white'>
-                        Không tìm thấy video nào được đăng tải
+                        No videos found
                       </span>
                     </div>
                   )}
@@ -179,7 +179,7 @@ const SubscriptionsPage = () => {
               <div className='mt-6 w-full border-b border-b-[rgba(0,0,0,0.1)] pb-6 dark:border-b-gray-600'>
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
-                    <span className='text-lg font-bold'>Tháng này</span>
+                    <span className='text-lg font-bold'>This Month</span>
                   </div>
                 </div>
 
@@ -190,7 +190,7 @@ const SubscriptionsPage = () => {
                   {isSuccess && getVideoFollowing.data.data.thisMonth.length === 0 && (
                     <div className='flex  h-full w-full items-center justify-center   '>
                       <span className='text-2xl font-bold text-black dark:text-white'>
-                        Không tìm thấy video nào được đăng tải
+                        No videos found
                       </span>
                     </div>
                   )}
@@ -202,7 +202,7 @@ const SubscriptionsPage = () => {
               <div className='mt-6 w-full border-b border-b-[rgba(0,0,0,0.1)] pb-6 dark:border-b-gray-600'>
                 <div className='flex items-center justify-between pb-3'>
                   <div className='flex items-center text-black dark:text-white'>
-                    <span className='text-lg font-bold'>Năm này</span>
+                    <span className='text-lg font-bold'>This Year</span>
                   </div>
                 </div>
                 <div className='subscription flex h-full w-full overflow-x-auto sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3'>
@@ -212,7 +212,7 @@ const SubscriptionsPage = () => {
                   {isSuccess && getVideoFollowing.data.data.older.length === 0 && (
                     <div className='flex  h-full w-full items-center justify-center   '>
                       <span className='text-2xl font-bold text-black dark:text-white'>
-                        Không tìm thấy video nào được đăng tải
+                        No videos found
                       </span>
                     </div>
                   )}
@@ -222,7 +222,7 @@ const SubscriptionsPage = () => {
 
             {isError && (
               <div className='flex h-[80vh] w-full items-center justify-center'>
-                <span className='text-2xl font-bold text-black dark:text-white'>Bạn chưa đăng ký kênh nào</span>
+                <span className='text-2xl font-bold text-black dark:text-white'>You have not subscribed to any channels</span>
               </div>
             )}
           </div>

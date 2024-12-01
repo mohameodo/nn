@@ -71,7 +71,7 @@ const SearchPage = () => {
     e.preventDefault()
     if (isVerify !== '2') {
       toast.dismiss()
-      toast.info('Bạn cần đăng nhập tài khoản để thực hiện chức năng này', {
+      toast.info('You need to log in to perform this function', {
         position: 'top-right',
         autoClose: 2000,
         pauseOnHover: false
@@ -90,7 +90,7 @@ const SearchPage = () => {
     e.preventDefault()
     if (isVerify !== '2') {
       toast.dismiss()
-      toast.info('Bạn cần đăng nhập tài khoản để thực hiện chức năng này', {
+      toast.info('You need to log in to perform this function', {
         position: 'top-right',
         autoClose: 2000,
         pauseOnHover: false
@@ -124,7 +124,7 @@ const SearchPage = () => {
                   >
                     <GiSettingsKnobs className='mr-2 h-5 w-5 rotate-90 text-black dark:text-white' />
                     <span className='font-semibold text-black line-clamp-2 dark:text-white sm:text-sm md:font-bold lg:text-base'>
-                      Bộ lọc
+                      Filter
                     </span>
                   </button>
 
@@ -148,12 +148,12 @@ const SearchPage = () => {
                         <div className='flex flex-col gap-y-2'>
                           <span className='text-lg font-medium dark:text-[#f1f1f1]'>{item.fullName}</span>
                           <span className='hidden text-xs font-normal dark:text-[#aaa] md:block'>
-                            {convertNumberToDisplayString(item.subscribers?.length as number)} người đăng ký
+                            {convertNumberToDisplayString(item.subscribers?.length as number)} subscribers
                           </span>
 
                           <span className='text-xs font-normal dark:text-[#aaa] md:hidden'>
                             {' '}
-                            {convertNumberToDisplayString(item.subscribers?.length as number)} người đăng ký
+                            {convertNumberToDisplayString(item.subscribers?.length as number)} subscribers
                           </span>
                           <span
                             className='hidden text-xs font-normal line-clamp-2 dark:text-[#aaa] md:block'
@@ -168,14 +168,14 @@ const SearchPage = () => {
                               onClick={(e) => handleUnSubscribeChannel(item._id as string, e, index)}
                             >
                               <IoMdNotificationsOutline className='h-6 w-6 text-black dark:text-white' />
-                              Đã đăng ký
+                              Subscribed
                             </button>
                           ) : (
                             <button
                               className=' relative z-10 h-fit flex-shrink-0 rounded-full bg-black px-4 py-2 text-sm font-bold  text-white hover:bg-[#4d4d4d] dark:bg-white dark:text-black dark:hover:bg-[#E5E5E5]'
                               onClick={(e) => handleSubscribeChannel(item._id as string, e, index)}
                             >
-                              Đăng ký
+                              Subscribe
                             </button>
                           ))}
                       </div>
@@ -210,7 +210,7 @@ const SearchPage = () => {
                     <div className='mt-40 flex w-full items-center justify-center gap-x-8'>
                       <BsSearch className='text-2xl text-gray-400 dark:text-gray-500 md:text-3xl' />
                       <span className='text-xl font-bold text-black dark:text-white md:text-2xl'>
-                        Không tìm thấy kết quả
+                        No results found
                       </span>
                     </div>
                   )}

@@ -28,7 +28,7 @@ const ChangePasswordPage = () => {
     mutationFn: (data: FormData) => profileApi.changePassword(data),
     onSuccess: () => {
       toast.dismiss()
-      toast.success('Cập nhật mật khẩu thành công', {
+      toast.success('Password updated successfully', {
         position: 'top-right',
         autoClose: 2000,
         pauseOnHover: false
@@ -50,11 +50,11 @@ const ChangePasswordPage = () => {
   return (
     <>
       <Helmet>
-        <title>Trang đổi mật khẩu - HciTube</title>
-        <meta name='description' content='Trang đổi mật khẩu - HciTube' />
+        <title>Change Password Page - HciTube</title>
+        <meta name='description' content='Change Password Page - HciTube' />
       </Helmet>
       <div className='flex w-full flex-col gap-y-2 lg:mt-4 lg:gap-y-5'>
-        <span className='text-sm font-semibold text-black dark:text-white md:text-base'>Đổi mật khẩu</span>
+        <span className='text-sm font-semibold text-black dark:text-white md:text-base'>Change Password</span>
         <form
           className='my-5 mx-auto flex w-11/12 flex-col gap-y-2 rounded-lg bg-white p-5 dark:bg-[#282828]'
           onSubmit={onSubmit}
@@ -64,7 +64,7 @@ const ChangePasswordPage = () => {
               htmlFor='passwordCurrent'
               className='cursor-pointer text-xs font-semibold text-black dark:text-white md:text-sm'
             >
-              Mật khẩu cũ
+              Current Password
             </label>
             <Input
               type='password'
@@ -72,7 +72,7 @@ const ChangePasswordPage = () => {
               id='passwordCurrent'
               register={register}
               errorMessage={errors.passwordCurrent?.message}
-              placeholder='Mật khẩu cũ'
+              placeholder='Current Password'
               classNameInput='rounded-lg border border-gray-400 p-3 placeholder:text-xs dark:bg-transparent text-black dark:text-white  md:placeholder:text-sm outline-none text-xs md:text-sm w-full '
             />
           </div>
@@ -81,7 +81,7 @@ const ChangePasswordPage = () => {
               htmlFor='password'
               className='cursor-pointer text-xs font-semibold text-black dark:text-white md:text-sm'
             >
-              Mật khẩu mới
+              New Password
             </label>
             <Input
               type='password'
@@ -89,7 +89,7 @@ const ChangePasswordPage = () => {
               id='password'
               register={register}
               errorMessage={errors.password?.message}
-              placeholder='Mật khẩu mới'
+              placeholder='New Password'
               classNameInput='rounded-lg border border-gray-400 p-3 placeholder:text-xs dark:bg-transparent text-black dark:text-white  md:placeholder:text-sm outline-none text-xs md:text-sm w-full '
             />
           </div>
@@ -98,7 +98,7 @@ const ChangePasswordPage = () => {
               htmlFor='passwordConfirm'
               className='cursor-pointer text-xs font-semibold text-black dark:text-white md:text-sm'
             >
-              Nhập lại mật khẩu mới
+              Confirm New Password
             </label>
             <Input
               type='password'
@@ -106,7 +106,7 @@ const ChangePasswordPage = () => {
               id='passwordConfirm'
               register={register}
               errorMessage={errors.passwordConfirm?.message}
-              placeholder='Nhập lại mật khẩu mới'
+              placeholder='Confirm New Password'
               classNameInput='rounded-lg border border-gray-400 p-3 placeholder:text-xs dark:bg-transparent text-black dark:text-white  md:placeholder:text-sm outline-none text-xs md:text-sm w-full '
             />
           </div>
@@ -116,7 +116,7 @@ const ChangePasswordPage = () => {
             disabled={changePasswordMutation.isLoading}
             isLoading={changePasswordMutation.isLoading}
           >
-            Cập nhập
+            Update
           </Button>
         </form>
       </div>
